@@ -18,7 +18,7 @@ feature "Creating Items" do
   end
 
   scenario "cannot create item without Item filled in" do
-    fill_in "Quantity", with: 1
+    fill_in "Quantity", with: "1"
     click_button "Create"
     page.should have_item("Item has not been added.")
   end

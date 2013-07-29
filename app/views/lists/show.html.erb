@@ -1,6 +1,26 @@
 <h2><%= @list.title %></h2>
+
+<% unless @list.items.nil? %>
+  <table>
+
+  <tr>
+    <th colspan="2" >Items</th>
+  </tr>
+
+  <% @list.items.each do |item| %>
+    <tr>
+      <td>item.quantity</td>
+      <td>item.product</td>
+    </tr>    
+  <% end -%>
+
+  </table>
+<% end -%>
+
+<nav>
 <%= link_to "New Item", new_list_item_path(@list) %>
 <%= link_to "Rename", edit_list_path %>
 <%= link_to "Delete", list_path(@list), method: :delete, 
     confirm: "Are you sure you want to delete this list?" %>
 <%= link_to "All Lists", lists_path %>
+</nav>

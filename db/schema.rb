@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130729185228) do
 
   create_table "items", :force => true do |t|
-    t.integer  "quantity"
+    t.string   "quantity"
     t.string   "product"
     t.integer  "list_id"
     t.datetime "created_at", :null => false

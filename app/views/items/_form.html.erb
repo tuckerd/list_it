@@ -1,0 +1,14 @@
+<%= error_messages_for :item %>
+
+<%= form_for [@list, @item] do |f| -%>
+  <p>
+    <%= f.label :quantity, "Quantity" %>
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.label :product, "Item" %>
+    <%= f.text_field :product %>
+  </p>
+
+  <%= f.submit %>
+<% end -%>
