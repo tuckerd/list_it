@@ -1,4 +1,5 @@
 <h2><%= @list.title %></h2>
+<h4>List Created By: <%= @list.user.email %></h4>
 
 <% unless @list.items.empty? %>
   <table>

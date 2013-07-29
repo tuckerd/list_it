@@ -3,6 +3,8 @@ require "spec_helper"
 feature "Creating Items" do
   before do
     list = FactoryGirl.create(:list, title: "Camping - Lake")
+    @user = FactoryGirl.create(:user)
+    list.update_attributes(user: @user)
     visit '/'
     click_link list.title
     click_link "New Item"
@@ -22,6 +24,4 @@ feature "Creating Items" do
     click_button "Create"
     page.should have_content("Item has not been added.")
   end
-
-  scenario "cannot create item without owning the list"
 end

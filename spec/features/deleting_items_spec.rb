@@ -3,6 +3,9 @@ require "spec_helper"
 feature "Deleting Items" do
   scenario "can delete items" do
     list = FactoryGirl.create(:list, title: "Home Depot")
+    @user = FactoryGirl.create(:user)
+    list.update_attributes(user: @user)
+
     visit '/'
     click_link list.title
     click_link "New Item"

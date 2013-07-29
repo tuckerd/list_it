@@ -3,7 +3,10 @@ require "spec_helper"
 feature "Editing Lists" do
   before do
     list = FactoryGirl.create(:list, title: "Camping")
+    @user = FactoryGirl.create(:user)
+    list.update_attributes(user: @user)
     visit '/'
+    sign_in_as!(@user)
     click_link list.title
     click_link "Rename"
     page.should have_content("Change List Name")
