@@ -1,0 +1,10 @@
+<%= error_messages_for :list %>
+
+<%= form_for @list do |f| -%>
+  <p>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+  </p>
+
+  <%= f.submit %>
+<% end -%>

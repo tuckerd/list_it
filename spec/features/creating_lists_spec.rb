@@ -6,7 +6,7 @@ feature "Creating Lists" do
     click_link "New List"
     fill_in "Title", with: "Groceries"
     click_button "Create List"
-    page.should have_content("List has been successfully created.")
+    page.should have_content("List has been created.")
     page.should have_content("Groceries")
   end
 
