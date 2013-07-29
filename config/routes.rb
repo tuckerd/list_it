@@ -1,7 +1,10 @@
 ListIt::Application.routes.draw do
   root to: "lists#index"
 
-  resources :lists
+  resources :lists do
+    resources :items
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
