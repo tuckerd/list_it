@@ -1,2 +1,5 @@
 <h2><%= @list.title %></h2>
 <%= link_to "Change", edit_list_path %>
+<%= link_to "Delete", list_path(@list), method: :delete, 
+    confirm: "Are you sure you want to delete this list?" %>
+<%= link_to "All Lists", lists_path %>
