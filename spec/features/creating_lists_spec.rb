@@ -17,7 +17,5 @@ feature "Creating Lists" do
     page.should have_content("List has not been created.")
   end
 
-  scenario "cannot create a new list without logging in" do
-  end
-
+  scenario "cannot create a new list without logging in"
 end
